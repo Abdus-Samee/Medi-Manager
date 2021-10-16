@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Medicine;
+use App\Models\User;
+use App\Jobs\SendMailJob;
+use Carbon\Carbon;
 
 class MediController extends Controller
 {
@@ -22,6 +25,17 @@ class MediController extends Controller
 
         $medicine->save();
 
-        return redirect('medi');
+        $now = Carbon::now();
+        $schedule = Carbon::parse($medicine->date.' '.$medicine->time)->subHours(6);
+        $diff = $schedule->diffInMinutes($now);
+        $when = $now->addMinutes($diff);
+
+        error_log($diff);
+
+        $job = (new SendMailJob($medicine))->delay(Carbon::now()->addMinutes($diff));
+
+        dispatch($job);
+
+        return redirect('home');
     }
 }

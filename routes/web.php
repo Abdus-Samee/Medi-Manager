@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediController;
+use App\Models\Medicine;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,7 @@ use App\Http\Controllers\MediController;
 
 Route::get('/', function () {
     return view('welcome');
+    // dd(Carbon\Carbon::now()->addHours(6)->format('H:i:s'));
 });
 
 Auth::routes();
