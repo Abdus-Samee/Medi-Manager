@@ -22,10 +22,10 @@
     @if(count($medicines) > 0)
         <div class="d-flex justify-content-around flex-wrap">
             @foreach ($medicines as $medicine)
-                <div class="card" style="width: 18rem;">
+                <div class="card border-info mb-2" style="width: 18rem;">
                     <div class="card-header"> {{ $medicine->name }}</div>
 
-                    <div class="card-body" style="padding-left: 5vw;">
+                    <div class="card-body text-info" style="padding-left: 5vw;">
                         <p class="card-text"> {{ $medicine->description }}</p>
                         <p class="card-text"> {{ $medicine->date }}</p>
                         <p class="card-text deadline">{{ $medicine->time }}</p>

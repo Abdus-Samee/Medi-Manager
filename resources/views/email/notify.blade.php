@@ -11,13 +11,13 @@
 
 </head>
 <body>
-    <div class="row justify-content-center mb-2">
+    <div class="row justify-content-center mt-5 mb-2">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Time to take your medicine!!!</div>
+            <div class="card text-center">
+                <div class="card-header bg-dark text-white">Time to take your medicine!!!</div>
 
-                <div class="card-body">
-                    <h2><b>Medicine name:</b> {{ $details['name'] }}</h2>
+                <div class="card-body bg-info">
+                    <h2><b>Medicine name: </b>{{ $details['name'] }}</h2>
                     <h3><b>Dose description: </b>{{ $details['description'] }}</h3>
 
                     <p>Thank you, <br /> Medi Manager Team</p>

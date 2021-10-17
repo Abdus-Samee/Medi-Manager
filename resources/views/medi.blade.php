@@ -14,8 +14,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Shcedule a Medicine') }}</div>
+                <div class="card mt-5">
+                    <div class="card-header">{{ __('Schedule a Medicine') }}</div>
     
                     <div class="card-body">
                         <form method="POST" action="/medi">
@@ -63,7 +63,9 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('home') }}" class="btn btn-success">Home</a>
+            <div class="d-flex justify-content-center mt-5">
+                <a href="{{ route('home') }}" class="btn btn-success">Home</a>
+            </div>
         </div>
     </div>
 </body>
