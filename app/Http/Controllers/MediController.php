@@ -7,6 +7,7 @@ use App\Models\Medicine;
 use App\Models\User;
 use App\Jobs\SendMailJob;
 use Carbon\Carbon;
+Use Alert;
 
 class MediController extends Controller
 {
@@ -35,6 +36,8 @@ class MediController extends Controller
         $job = (new SendMailJob($medicine))->delay(Carbon::now()->addMinutes($diff));
 
         dispatch($job);
+
+        Alert::success('Scheduled!', $medicine->name.' has been scheduled for '.$medicine->date.' at '.$medicine->time);
 
         return redirect('home');
     }

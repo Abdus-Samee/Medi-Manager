@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediController;
-use App\Models\Medicine;
-use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
